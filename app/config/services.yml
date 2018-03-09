@@ -31,13 +31,13 @@ services:
 
 
     # this should work but it doesn't
-    AppBundle\Serialization\SubscribingHandlers\:
-        resource: '../../src/AppBundle/Serialization/SubscribingHandlers'
-        tags: ['jms_serializer.subscribing_handler']
-        public: true
+    #AppBundle\Serialization\SubscribingHandlers\:
+    #    resource: '../../src/AppBundle/Serialization/SubscribingHandlers'
+    #    tags: ['jms_serializer.subscribing_handler']
+    #   public: true
 
     # this works but "jms_serializer.datetime_handler"
     # this doesn't allow to register several handlers for the same type
-    #jms_serializer.datetime_handler:
-    #    class: AppBundle\Serialization\SubscribingHandlers\TreatEmptyStringAsNullDateTimeHandler
-    #    tags: ['jms_serializer.subscribing_handler']
+    jms_serializer.datetime_handler:
+        class: AppBundle\Serialization\SubscribingHandlers\TreatEmptyStringAsNullDateTimeHandler
+        tags: ['jms_serializer.subscribing_handler']
