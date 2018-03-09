@@ -67,3 +67,12 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# sane defaults for JMS Serializer
+jms_serializer:
+    # make sure null elements are *not* omitted
+    default_context:
+        serialization:
+            serialize_null: true
+        deserialization:
+            serialize_null: true
